@@ -222,12 +222,7 @@ export default function Experience() {
             ))}
           </div>
 
-          {/* Spacing Trivia */}
-          <div className="text-center mt-24">
-            <p className="text-xs text-text-secondary/50 font-mono">
-              I once deployed something that worked on the first try. Still suspicious of that moment.
-            </p>
-          </div>
+        
         </div>
       </div>
     </section>
