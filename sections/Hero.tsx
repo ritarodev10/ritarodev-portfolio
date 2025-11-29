@@ -9,9 +9,9 @@ import { ArrowRight, Terminal } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const terminalLines = [
-  "deploying: next-app --with-ai --no-drama",
-  "status: shipping dashboards, bots, and tiny miracles",
-  "note: code may contain traces of coffee",
+  ">_ deploying: next-app --with-ai --no-drama",
+  ">_ status: shipping dashboards, bots, and tiny miracles",
+  ">_ note: code may contain traces of coffee",
 ];
 
 export default function Hero() {
@@ -114,7 +114,6 @@ export default function Hero() {
           
           {/* Terminal Line */}
           <div className="flex items-center gap-2 text-neon-lime font-mono text-sm md:text-base bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-sm min-h-[40px]">
-            <Terminal size={14} />
             <span>{text}</span>
             <span className="w-2 h-4 bg-neon-lime animate-pulse" />
           </div>

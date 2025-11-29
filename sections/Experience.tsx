@@ -172,7 +172,7 @@ export default function Experience() {
           {/* Vertical Line */}
           <div 
             ref={lineRef}
-            className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neon-lime via-cyan-glow to-transparent -translate-x-1/2 hidden md:block" 
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neon-lime via-cyan-glow to-transparent -translate-x-1/2 block" 
           />
 
           <div className="flex flex-col gap-12 md:gap-24">
@@ -182,10 +182,10 @@ export default function Experience() {
                 className={`flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center relative experience-card`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-background border-2 border-neon-lime rounded-full -translate-x-[5px] md:-translate-x-1/2 z-10 hidden md:block shadow-[0_0_10px_rgba(183,255,90,0.5)]" />
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-background border-2 border-neon-lime rounded-full -translate-x-1/2 z-10 block shadow-[0_0_10px_rgba(183,255,90,0.5)]" />
 
                 {/* Content */}
-                <div className="w-full md:w-1/2 md:px-12">
+                <div className="w-full md:w-1/2 pl-12 md:px-12">
                   <GlassCard className="relative overflow-hidden group border-white/5 hover:border-neon-lime/30 transition-colors duration-500">
                     <div className="absolute top-0 left-0 w-1 h-full bg-neon-lime opacity-0 group-hover:opacity-100 transition-opacity" />
                     
@@ -201,7 +201,7 @@ export default function Experience() {
 
                       <p className="text-text-secondary text-sm">{exp.desc}</p>
 
-                      <ul className="list-disc list-inside text-sm text-text-secondary space-y-1 marker:text-neon-lime">
+                      <ul className="list-disc list-outside ml-4 text-sm text-text-secondary space-y-1 marker:text-neon-lime">
                         {exp.points.map((point, i) => (
                           <li key={i}>{point}</li>
                         ))}

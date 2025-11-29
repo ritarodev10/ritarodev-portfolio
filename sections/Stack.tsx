@@ -76,9 +76,13 @@ export default function Stack() {
   return (
     <section ref={containerRef} id="stack" className="py-24 md:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tighter text-white mb-16 text-center">
-          Emotional Stack
+        <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tighter text-white mb-8 text-center">
+          Tech Stacks
         </h2>
+
+        <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto text-center mb-16 leading-relaxed">
+          The tools I use to turn <span className="text-white italic">"what if"</span> into <span className="text-white italic">"deployed"</span> — usually with a healthy dose of caffeine and documentation reading.
+        </p>
 
         <div className="flex flex-col md:flex-row h-[800px] md:h-[600px] gap-4 w-full">
           {emotionalStack.map((stack) => {
