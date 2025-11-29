@@ -18,16 +18,14 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
+          <a href="https://github.com/ritarodev10" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
             <Github size={20} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
-            <Twitter size={20} />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
+
+          <a href="https://linkedin.com/in/riza-rohman" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
             <Linkedin size={20} />
           </a>
-          <a href="mailto:hello@ritaro.dev" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
+          <a href="mailto:rizarohman@ritaro.dev" className="text-text-secondary hover:text-white transition-colors" data-magnetic>
             <Mail size={20} />
           </a>
         </div>

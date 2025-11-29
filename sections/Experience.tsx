@@ -160,9 +160,13 @@ export default function Experience() {
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-cyan-glow/10 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tighter text-white mb-20 text-center">
+        <h2 className="text-4xl md:text-6xl font-bold font-heading tracking-tighter text-white mb-8 text-center">
           Experience
         </h2>
+
+        <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto text-center mb-20 leading-relaxed">
+          I’ve worked with teams across Canada, the US, Europe, and Asia — usually somewhere between <span className="text-white italic">“we have an idea”</span> and <span className="text-white italic">“this needs to go live yesterday.”</span>
+        </p>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Line */}

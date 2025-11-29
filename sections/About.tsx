@@ -13,9 +13,12 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 768;
+      const moveDistance = isMobile ? 150 : 50;
+
       // Marquee Animations
       gsap.to(marqueeRef1.current, {
-        xPercent: -20,
+        xPercent: -moveDistance,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -26,7 +29,7 @@ export default function About() {
       });
 
       gsap.to(marqueeRef2.current, {
-        xPercent: 20,
+        xPercent: moveDistance,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -74,7 +77,7 @@ export default function About() {
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 md:w-32 md:h-32 bg-panel rounded-2xl border border-white/10 flex items-center justify-center relative overflow-hidden group">
                     <div className="absolute inset-0 bg-neon-lime/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <ProfilePicture className="w-12 h-12 md:w-24 md:h-24 text-white group-hover:scale-110 transition-transform duration-300" />
+                    <ProfilePicture className="w-16 h-16 md:w-24 md:h-24 text-white group-hover:scale-110 transition-transform duration-300" />
                     
                     {/* Glitch lines */}
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
@@ -102,18 +105,27 @@ export default function About() {
                   <div className="pt-6 border-t border-white/5">
                     <div className="flex items-center gap-3 p-4 bg-white/5 rounded-lg border border-white/5">
                       <div className="w-2 h-2 rounded-full bg-neon-lime animate-pulse" />
-                      <p className="text-sm md:text-base font-mono text-white/80 italic">
+                      <p className="flex-1 text-sm md:text-base font-mono text-white/80 italic">
                       “Fully capable of coding alone, but why suffer when AI exists?”
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 text-xs font-mono mt-4">
-                    <span className="text-neon-lime drop-shadow-[0_0_8px_rgba(183,255,90,0.5)]">STATUS: ONLINE</span>
-                    <span className="text-white/30">•</span>
-                    <span className="text-neon-lime drop-shadow-[0_0_8px_rgba(183,255,90,0.5)]">LOC: MALANG</span>
-                    <span className="text-white/30">•</span>
-                    <span className="text-neon-lime drop-shadow-[0_0_8px_rgba(183,255,90,0.5)]">UPTIME: 99.9%</span>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono mt-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-white/50">STATUS:</span>
+                      <span className="text-neon-lime drop-shadow-[0_0_8px_rgba(183,255,90,0.5)] animate-pulse">ONLINE</span>
+                    </div>
+                    <span className="hidden md:inline text-white/30">•</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white/50">LOC:</span>
+                      <span className="text-neon-lime drop-shadow-[0_0_8px_rgba(183,255,90,0.5)] animate-pulse">MALANG</span>
+                    </div>
+                    <span className="hidden md:inline text-white/30">•</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white/50">UPTIME:</span>
+                      <span className="text-neon-lime drop-shadow-[0_0_8px_rgba(183,255,90,0.5)] animate-pulse">99.9%</span>
+                    </div>
                   </div>
                 </div>
               </div>

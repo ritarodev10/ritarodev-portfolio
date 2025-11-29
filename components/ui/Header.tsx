@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLenis } from "@/components/providers/SmoothScroll";
 
@@ -37,6 +37,8 @@ export default function Header() {
     setIsOpen(false);
   };
 
+  if (pathname === "/cv") return null;
+
   return (
     <header
       className={cn(
@@ -63,6 +65,7 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-lime transition-all group-hover:w-full" />
             </a>
           ))}
+          <div className="flex items-center gap-4">
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
@@ -71,6 +74,16 @@ export default function Header() {
           >
             Let's Talk
           </a>
+          <a
+            href="/cv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2 bg-transparent border border-white/20 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+          >
+            <Download size={16} />
+            Download CV
+          </a>
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -108,6 +121,14 @@ export default function Header() {
               className="px-5 py-3 bg-white text-black text-center font-bold rounded-full hover:bg-neon-lime transition-colors mt-2"
             >
               Let's Talk
+            </a>
+            <a
+              href="/docs/2025 - CV of Riza Taufiqur Rohman.pdf"
+              download
+              className="flex items-center justify-center gap-2 px-5 py-3 bg-transparent border border-white/20 text-white text-center font-bold rounded-full hover:bg-white/10 transition-colors"
+            >
+              <Download size={16} />
+              Download CV
             </a>
           </motion.div>
         )}

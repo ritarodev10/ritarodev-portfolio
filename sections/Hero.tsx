@@ -9,9 +9,9 @@ import { ArrowRight, Terminal } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 const terminalLines = [
-  "> deploying: next-app --with-ai --no-drama",
-  "> status: shipping dashboards, bots, and tiny miracles",
-  "> note: code may contain traces of coffee",
+  "deploying: next-app --with-ai --no-drama",
+  "status: shipping dashboards, bots, and tiny miracles",
+  "note: code may contain traces of coffee",
 ];
 
 export default function Hero() {
@@ -148,10 +148,12 @@ export default function Hero() {
             </a>
             
             <a
-              href="#experience"
+              href="/cv"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-all hover:scale-105 active:scale-95"
             >
-              View Experience
+              Download CV
             </a>
           </div>
 

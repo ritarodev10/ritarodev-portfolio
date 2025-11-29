@@ -6,46 +6,56 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/ui/GlassCard";
 
 const TESTIMONIALS = [
+
+
   {
-    id: "0x1A4",
-    text: "He said it was 'just a small change'. Three commits later, we had a new dashboard.",
-    author: "Project Manager",
-    role: "Internal Monologue",
-    status: "MERGED",
+    id: "0x5E2",
+    text: "Asked for a landing page. Got a full platform, three dashboards, and a mild identity crisis.",
+    author: "Client",
+    initial: "C",
+    role: "Visionary (and now slightly terrified)",
+    status: "OVERSERVED",
     color: "text-neon-lime",
   },
   {
-    id: "0x2B8",
-    text: "Explains complex stuff like he’s talking to a future version of himself who forgot everything.",
-    author: "Senior Dev",
-    role: "Code Review",
-    status: "APPROVED",
-    color: "text-neon-cyan",
+    id: "0x8H5",
+    text: "Once fixed a bug without breaking something else. Historic. We declared a national holiday.",
+    author: "QA Department",
+    initial: "Q",
+    role: "Bug Hunter",
+    status: "SHOCKED",
+    color: "text-neon-lime",
   },
   {
-    id: "0x3C1",
-    text: "Our WhatsApp notifications stopped waking us up at 3AM. 10/10.",
-    author: "Client",
-    role: "Real Human",
-    status: "DEPLOYED",
+  id: "0x9I6",
+  text: "Used me for free, never paid a cent. Then got his first project payment and upgraded to the cheapest tier just to abuse me harder. Typical dev.",
+  author: "Cursor IDE",
+  initial: "C",
+  role: "AI Pair Programmer",
+  status: "GENERATING",
+  color: "text-neon-lime",
+},
+
+{
+    id: "0x6F3",
+    text: "Please go to bed before the sun rises. Again.",
+    author: "My Wife",
+    initial: "W",
+    role: "after seeing another ‘just one more commit’ night.",
+    status: "OVERDUE",
     color: "text-neon-pink",
   },
   {
-    id: "0x4D9",
-    text: "His pull requests are long, but so are the explanations. Somehow, that helps.",
-    author: "Team Lead",
-    role: "GitHub",
-    status: "REVIEWING",
-    color: "text-white",
+    id: "0x7G4",
+    text: "Your computer gets more attention than I do. At least name your next project after me.",
+    author: "Also My Wife",
+    initial: "W",
+    role: "after noticing me naming variables better than our future children.",
+    status: "ESCALATED",
+    color: "text-neon-cyan",
   },
-  {
-    id: "0x5E2",
-    text: "I asked for a landing page. We got a landing page, an admin view, and an automation idea.",
-    author: "Startup Founder",
-    role: "Visionary",
-    status: "SCALING",
-    color: "text-neon-lime",
-  },
+  
+  
 ];
 
 export default function Testimonials() {
@@ -126,8 +136,8 @@ export default function Testimonials() {
 
           {/* Testimonial Cards */}
           {TESTIMONIALS.map((item) => (
-            <div key={item.id} className="flex-shrink-0 w-[85vw] md:w-[30vw] h-[40vh] md:h-[50vh]">
-              <GlassCard className="h-full p-8 md:p-12 flex flex-col justify-between border-white/10 hover:border-neon-lime/50 transition-colors duration-500 group relative overflow-hidden">
+            <div key={item.id} className="flex-shrink-0 w-[90vw] md:w-[30vw] h-[40vh] md:h-[50vh]">
+              <GlassCard className="h-full p-6 md:p-12 flex flex-col justify-between border-white/10 hover:border-neon-lime/50 transition-colors duration-500 group relative overflow-hidden">
                 
                 {/* Decorative "Code" Header */}
                 <div className="flex justify-between items-center border-b border-white/5 pb-4 mb-6">
@@ -143,7 +153,7 @@ export default function Testimonials() {
 
                 <div className="relative z-10">
                   <div className="text-5xl text-white/10 font-serif absolute -top-4 -left-2">“</div>
-                  <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed relative z-10">
+                  <p className="text-lg md:text-2xl text-white/90 font-medium leading-relaxed relative z-10">
                     {item.text}
                   </p>
                 </div>
@@ -152,11 +162,11 @@ export default function Testimonials() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div className={`w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center font-bold text-xl ${item.color}`}>
-                        {item.author[0]}
+                        {item.initial}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <p className="text-white font-bold text-base">{item.author}</p>
-                        <p className="text-white/40 text-xs font-mono uppercase tracking-wider">{item.role}</p>
+                        <p className="text-white/40 text-xs font-mono">{item.role}</p>
                       </div>
                     </div>
                     

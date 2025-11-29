@@ -21,6 +21,8 @@ export default function Marquee() {
   useEffect(() => {
     let xPercent = 0;
     let direction = -1;
+    const isMobile = window.innerWidth < 768;
+    const speed = isMobile ? 0.2 : 0.1;
 
     const animate = () => {
       if (xPercent <= -100) {
@@ -31,7 +33,7 @@ export default function Marquee() {
       }
       
       gsap.set(sliderRef.current, { xPercent: xPercent });
-      xPercent += 0.05 * direction;
+      xPercent += speed * direction;
       requestAnimationFrame(animate);
     };
 

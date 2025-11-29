@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { ArrowRight, Github, Mail } from "lucide-react";
+import { ArrowRight, Github, Mail, MessageCircle, Copy, Check } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,6 +30,12 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("rizarohman@ritaro.dev");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section ref={containerRef} id="contact" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background Glow */}
@@ -45,31 +53,38 @@ export default function Contact() {
 
           <div className="contact-anim flex flex-col md:flex-row items-center gap-4 mt-8">
             <Link
-              href="mailto:hello@ritaro.dev"
+              href="https://wa.me/6287855826341"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-neon-lime text-black font-bold rounded-full hover:bg-white transition-colors flex items-center gap-2 group"
               data-magnetic
             >
-              Contact Riza
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+              <MessageCircle size={20} />
+              WhatsApp
             </Link>
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
+          
+            <button
+              onClick={handleCopyEmail}
+              className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors flex items-center gap-2 relative"
               data-magnetic
             >
-              <Github size={20} />
-              View GitHub
-            </Link>
-            <Link
-              href="mailto:hello@ritaro.dev"
-              className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
-              data-magnetic
-            >
-              <Mail size={20} />
-              Email Me
-            </Link>
+              {copied ? <Check size={20} /> : <Mail size={20} />}
+              {copied ? "'rizarohman@ritaro.dev' copied!" : "Email Me"}
+              
+              {/* Popup Toast */}
+              <AnimatePresence>
+                {copied && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute -top-12 left-1/2 -translate-x-1/2 bg-zinc-800 text-white text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap pointer-events-none border border-white/10"
+                  >
+                    Email copied!
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
         </div>
       </div>
